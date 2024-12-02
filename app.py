@@ -18,9 +18,9 @@ def insert_text() -> None:
     if url != "https://csie.ncut.edu.tw/content.php?key=86OP82WJQO":
         messagebox.showerror("網路錯誤", "無法取得網頁 : 404")
     else:
-        content = ""
+        content = f"{'姓名':{chr(12288)}<4}{'職稱':{chr(12288)}<16}Email" + "\n" + "-" * 60 + "\n"
         for i in range(len(name_list)):
-            content += f'{name_list[i]} {job_list[i]} {emails_list[i]}\n'
+            content += f'{name_list[i]}\t{job_list[i]}\t\t\t\t{emails_list[i]}\n'
         scrolled_text.insert(tkinter.END, content)
 
 # 使用 with 來處理資料庫連接與建立
